@@ -1,0 +1,33 @@
+<div #container class="container">
+  <div
+  *ngIf="container"
+    [style.height.px]="container.offsetHeight"
+    class="rectangle"
+    [ngStyle]="style"
+    mwlResizable
+    [enableGhostResize]="true"
+    (resizeEnd)="onResizeEnd($event)"
+    ngDraggable
+    [bounds]="container"
+    [inBounds]="true"
+    [position]="position"
+    (endOffset)="onDragEnd($event)"
+  >
+    <div
+      class="resize-handle-left"
+      mwlResizeHandle
+      [resizeEdges]="{ left: true }"
+      (mousedown)="$event.stopPropagation()"
+    >
+      <div class="resize-handle-bar-left"></div>
+    </div>
+    <div
+      class="resize-handle-right"
+      mwlResizeHandle
+      [resizeEdges]="{ right: true }"
+      (mousedown)="$event.stopPropagation()"
+    >
+      <div class="resize-handle-bar-right"></div>
+    </div>
+  </div>
+</div>

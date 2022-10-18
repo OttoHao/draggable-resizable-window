@@ -1,0 +1,50 @@
+@handle-width: 6px;
+@primary-color: #012169;
+
+.container {
+    height: 100%;
+}
+
+.rectangle {
+  box-sizing: border-box;
+//   position: relative;
+  background-color: rgba(1, 33, 105, 0.1);
+  cursor: move;
+}
+
+.resize-handle-left,
+.resize-handle-right {
+  position: absolute;
+  height: 100%;
+  width: @handle-width;
+  cursor: ew-resize;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.resize-handle-left {
+  left: 0;
+}
+.resize-handle-right {
+  right: 0;
+}
+
+.resize-handle-bar-left,
+.resize-handle-bar-right {
+  position: relative;
+  height: 40%;
+  background-color: @primary-color;
+}
+
+.resize-handle-bar-left {
+  left: -@handle-width;
+  border-top-left-radius: @handle-width;
+  border-bottom-left-radius: @handle-width;
+}
+
+.resize-handle-bar-right {
+  left: @handle-width;
+  border-top-right-radius: @handle-width;
+  border-bottom-right-radius: @handle-width;
+}
